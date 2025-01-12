@@ -9,7 +9,7 @@ import scipy.sparse as sp
 # ==========================
 # 1. Load Model dan IndoBERT
 # ==========================
-model_file = 'lightgbm_model.pkl'
+model_file = 'CatBoostRegressor_model.pkl'
 scaler_file = 'scaler.pkl'
 
 model = joblib.load(model_file)
