@@ -124,37 +124,7 @@ st.title("Prediksi Impression Pembaca Postingan Berita Detik.com")
 st.warning("\u26A0\uFE0F Gunakan aplikasi ini dengan bijak. Jangan gunakan untuk membuat konten clickbait yang menyesatkan.")
 
 # Input text
-st.markdown(
-    """
-    <style>
-    .input-container {
-        position: relative;
-    }
-    .paste-button {
-        position: absolute;
-        bottom: 10px;
-        right: 10px;
-        background-color: #f0f0f0;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        padding: 5px 10px;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
-user_text = st.markdown(
-    """
-    <div class="input-container">
-        <textarea id="text-input" placeholder="Tulis atau paste teks di sini..." style="width: 100%; height: 150px;"></textarea>
-        <button class="paste-button" onclick="navigator.clipboard.readText().then(text => { document.getElementById('text-input').value = text; });">Paste</button>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-
+user_text = st.text_area("Masukkan Teks Postingan X", height=150, placeholder="Tulis atau paste teks di sini...")
 retweets = st.number_input("Masukkan Jumlah Retweets", min_value=0, value=0, step=1)
 domain = st.selectbox("Pilih Domain", options=list(domain_mapping.keys()))
 
