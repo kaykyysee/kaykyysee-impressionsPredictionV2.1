@@ -120,8 +120,16 @@ def encode_text_with_indobert(texts):
 # ==========================
 st.title("Prediksi Impression Pembaca Postingan Berita Detik.com")
 
+# Warning Section
+st.warning("\u26A0\uFE0F Gunakan aplikasi ini dengan bijak. Jangan gunakan untuk membuat konten clickbait yang menyesatkan.")
+
 # Input text
-user_text = st.text_area("Masukkan Teks Postingan X")
+col1, col2 = st.columns([4, 1])
+with col1:
+    user_text = st.text_area("Masukkan Teks Postingan X", height=150, placeholder="Tulis atau paste teks di sini...")
+with col2:
+    st.button("Paste", help="Paste teks yang telah disalin dari clipboard.")
+
 retweets = st.number_input("Masukkan Jumlah Retweets", min_value=0, value=0, step=1)
 domain = st.selectbox("Pilih Domain", options=list(domain_mapping.keys()))
 
@@ -131,7 +139,15 @@ if st.button("Prediksi"):
         st.write("Melakukan preprocessing teks...")
         processed_text = preprocess_text(user_text)
         cleaned_text = clean_text_id(processed_text)
-        text_length = len(cleaned_text)
+        text_length = len(cleaned_text.split())
+
+        # Tampilkan hasil preprocessing
+        st.subheader("Hasil Preprocessing Teks")
+        st.text_area("Teks Setelah Preprocessing", cleaned_text, height=100, disabled=True)
+
+        # Analisis tambahan
+        st.subheader("Analisis Teks")
+        st.write(f"Panjang teks (jumlah kata): {text_length}")
 
         # Convert text to IndoBERT embeddings
         st.write("Menghasilkan embedding IndoBERT...")
