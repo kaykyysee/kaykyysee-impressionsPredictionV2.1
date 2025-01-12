@@ -121,7 +121,7 @@ def encode_text_with_indobert(texts):
 st.title("Prediksi Jumlah Tayangan Postingan Berita Detik.com 📰")
 
 # Warning Section
-st.warning("\u26A0\uFE0F Gunakan aplikasi ini dengan bijak ‼️ Jangan gunakan untuk membuat konten clickbait yang menyesatkan ⚠️")
+st.warning("\u26A0\uFE0F Gunakan aplikasi ini dengan bijak ‼️ Jangan gunakan untuk membuat konten clickbait yang menyesatkan")
 
 # Input text
 user_text = st.text_area("Masukkan Teks Postingan X", height=150, placeholder="Tulis atau paste teks di sini...")
