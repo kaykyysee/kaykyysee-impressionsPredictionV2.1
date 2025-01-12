@@ -6,3 +6,4 @@ numpy==1.24.3
 Sastrawi==1.0.1
 catboost==1.2.7
 sentence_transformers
+nltk==3.8.1
