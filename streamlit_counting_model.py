@@ -166,6 +166,6 @@ if st.button("Prediksi"):
 
         # Predict
         prediction = model.predict(scaled_features)
-        st.success(f"Diperkirakan sebanyak: {prediction[0]:,.0f} tayangan akan dicapai dalam 1 minggu")
+        st.success(f"Diperkirakan sebanyak: {prediction[0]:,.0f} penayangan akan dicapai dalam 1 minggu")
     else:
         st.warning("Tolong masukkan teks untuk prediksi.")
